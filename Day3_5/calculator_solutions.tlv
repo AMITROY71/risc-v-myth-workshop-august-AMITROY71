@@ -19,9 +19,9 @@ $val1[31:0] = $rand1[3:0];
                             
  ///real calculator code                           
                        
-$val1[31:0] = $rand1[3:0];
+$val1[31:0] = >>1$out;
          $val2[31:0] = $rand2[3:0];
-         $out[31:0] = $reset ? 32'b0 : $op[0] ? >>1$out + $val2[31:0] 
-                                             : $op[1] ? >>1$out - $vel2[31:0]
-                                                     :$op[2] ? >>1$out * $val2[31:0]
-                                                              : >>1$out / $val2[31:0];
+         $out[31:0] = $reset ? 32'b0 : $op[0] ? $val1[31:0]  + $val2[31:0] 
+                                             : $op[1] ? $val1[31:0] - $vel2[31:0]
+                                                     :$op[2] ? $val1[31:0] * $val2[31:0]
+                                                              : $val1[31:0] / $val2[31:0];
