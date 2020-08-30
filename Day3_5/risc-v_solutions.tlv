@@ -1,6 +1,2 @@
-$rs2[4:0] = $instr[24:20];
-         $rs1[4:0] = $instr[19:15];
-         $func3[2:0] = $instr[14:12];
-         $func7[6:0] = $instr[31:25];
-         $rd[4:0] = $instr[11:7];
-         $opcode[6:0] = $instr[6:0];
+$pc[31:0] = >>1$reset ? 32'b0 : >>1$inc_pc;
+         $inc_pc[31:0] = $pc + 32'd4;
