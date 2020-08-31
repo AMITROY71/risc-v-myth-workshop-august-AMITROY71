@@ -1,3 +1,1 @@
-$br_tgt_pc = $pc + $imm;
-            $m_pc[31:0] = $br_tgt_pc ? >>1$br_tgt_pc : >>1$pc;
-            
+*passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
